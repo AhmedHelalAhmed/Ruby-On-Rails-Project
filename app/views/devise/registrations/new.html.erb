@@ -3,48 +3,53 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-<!-- name -->
+  <!-- name -->
   <div class="field">
     <%= f.label :name %><br/>
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br/>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-<!--  date of birth-->
+  <!--  date of birth-->
   <div class="field">
     <%= f.label :date_of_birth %><br/>
-    <%= f.date_select :date_of_birth , { :start_year => 1900 ,:end_year =>  Date.today.year}  %>
+    <%= f.date_select :date_of_birth, {:start_year => 1900, :end_year => Date.today.year} %>
   </div>
 
 
-<!--  gender-->
+  <!--  gender-->
   <div class="field">
     <%= f.label :gender %><br/>
-    <%= f.select :gender, User.genders.keys, autofocus: true   %>
+    <%= f.select :gender, User.genders.keys, autofocus: true %>
   </div>
 
 
-<!--  avatar-->
-<!--  <div class="field">-->
-
-<!--  </div>-->
+  <!--  avatar-->
+  <div class="field">
+    <%= f.label "Your avatar" %><br/>
+    <%= f.label :avatar do %>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    <% end %>
+    <br/><br/>
+  </div>
 
 
 

@@ -4,7 +4,7 @@ class AddDateOfBirthToUsers < ActiveRecord::Migration[5.1]
   end
 
   def down
-    add_column :users, :date_of_birth
+    remove_column :users, :date_of_birth
   end
 
 end

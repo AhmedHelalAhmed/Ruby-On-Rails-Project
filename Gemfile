@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # a flexible authentication solution for Rails based on Warden
 gem 'devise'
+# simple and extremely flexible way to upload files
+gem 'carrierwave', '~> 1.0'
