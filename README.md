@@ -44,3 +44,17 @@ bundle install
 ```
  rails db:migrate
 ```
+```
+rails generate devise:views
+#rails generate devise:views users #whynot?
+```
+* add some name, gender and date of birth to users
+```
+rails generate migration add_name_to_users name:string
+```
+```
+rails generate migration add_gender_to_users gender:integer
+```
+```
+rails generate migration add_date_of_birth_to_users date_of_birth:datetime
+```
