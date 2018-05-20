@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Title:</strong>
+  <strong>Content:</strong>
   <%= @lecture.content %>
+</p>
+<p>
+  <strong>attachment:</strong>
+  <a href="<%= @lecture.attachment %>" > Download the attachment</a>
 </p>
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>

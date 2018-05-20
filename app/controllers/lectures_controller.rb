@@ -1,6 +1,6 @@
 class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
-
+  before_action :get_course, only: [:edit, :new]
   # GET /lectures
   # GET /lectures.json
   def index
@@ -66,6 +66,11 @@ class LecturesController < ApplicationController
     def set_lecture
       @lecture = Lecture.find(params[:id])
     end
+
+  def get_course
+    @courses_created_by_current_user = Course.where(:user_id=>current_user.id)
+  end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params

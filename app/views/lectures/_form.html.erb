@@ -14,19 +14,22 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content, id: :lecture_content %>
+    <%= form.text_area :content %>
   </div>
 
   <div class="field">
     <%= form.label :attachment %>
-    <%= form.file_field :attachment, id: :lecture_attachment %>
+    <%= form.file_field :attachment %>
   </div>
 
   <!--for add current user id -->
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <!--for add current course id -->
-  <%= form.hidden_field :course_id, value: params[:course_id] %>
+  <div class="field">
+    <%= form.label :Course %>
+    <%= form.collection_select :course_id, @courses_created_by_current_user, :id, :title, include_blank: true %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
