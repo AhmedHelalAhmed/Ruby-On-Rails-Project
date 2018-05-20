@@ -89,3 +89,11 @@ rails g scaffold Course title:string
 rails g migration add_user_id_to_courses
 rake db:migrate
 ```
+* add lectures migration
+```
+rails generate migration create_lectures attachment:string content:text user_id:integer course_id:integer
+
+rails db:migrate
+
+```
+
