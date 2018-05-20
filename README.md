@@ -96,4 +96,8 @@ rails generate migration create_lectures attachment:string content:text user_id:
 rails db:migrate
 
 ```
+* add lectures model
+```
+rails generate model Lecture --skip-migration
+```
 
