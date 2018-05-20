@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # simple and extremely flexible way to upload files
 gem 'carrierwave', '~> 1.0'
+# for admin
+gem 'activeadmin', '~> 1.0.0.pre2'
