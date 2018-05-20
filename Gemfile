@@ -59,3 +59,5 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 # for admin
 gem 'activeadmin', '~> 1.0.0.pre2'
+# for rich text
+gem 'ckeditor_rails'
