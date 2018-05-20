@@ -69,6 +69,8 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.fetch(:lecture, {})
+      # params.fetch(:lecture, {})
+      params.require(:lecture).permit(:attachment,:content,:user_id,:course_id)
+
     end
 end

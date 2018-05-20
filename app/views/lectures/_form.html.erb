@@ -4,12 +4,29 @@
       <h2><%= pluralize(lecture.errors.count, "error") %> prohibited this lecture from being saved:</h2>
 
       <ul>
-      <% lecture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% lecture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
+
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content, id: :lecture_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment, id: :lecture_attachment %>
+  </div>
+
+  <!--for add current user id -->
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <!--for add current course id -->
+  <%= form.hidden_field :course_id, value: params[:course_id] %>
 
   <div class="actions">
     <%= form.submit %>
