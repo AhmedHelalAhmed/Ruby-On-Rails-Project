@@ -80,5 +80,8 @@ gem install carrierwave
 rails g migration add_avatar_to_users avatar:string
 rake db:migrate
 ```
+* add courses
+```
 
+```
 
