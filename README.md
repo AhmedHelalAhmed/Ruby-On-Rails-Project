@@ -82,6 +82,6 @@ rake db:migrate
 ```
 * add courses
 ```
-
+rails g scaffold Course title:string
 ```
 
