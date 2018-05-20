@@ -114,4 +114,10 @@ rails g model Comment body:text lecture_id:integer
 rails g controller Comments
 
 ```
-
+* add active admin
+```
+bundle install
+rails g active_admin:install
+rails db:migrate
+rake db:seed
+```
