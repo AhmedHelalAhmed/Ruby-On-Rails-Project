@@ -84,4 +84,8 @@ rake db:migrate
 ```
 rails g scaffold Course title:string
 ```
-
+* add relation between user and courses for migration
+```
+rails g migration add_user_id_to_courses
+rake db:migrate
+```
