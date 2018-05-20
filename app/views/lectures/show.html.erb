@@ -1,20 +1,33 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Content:</strong>
-  <%=raw @lecture.content  %>
+  <%= raw @lecture.content %>
 </p>
 <p>
   <strong>attachment:</strong>
-  <a href="<%= @lecture.attachment %>" > Download the attachment</a>
+  <a href="<%= @lecture.attachment %>"> Download the attachment</a>
 </p>
 
 
+<%= link_to like_lecture_path(@lecture), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="left Align">
+    <span class="glyphicon glyphicon-thumbs-up glyphicom-align-center" aria-hidden="true">Like</span>
+    <span class="badge"><%= @lecture.get_upvotes.size %></span>
+  </button>
+<% end %>
 
+<%= link_to dislike_lecture_path(@lecture), class: "dislike", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="left Align">
+    <span class="glyphicon glyphicon-thumbs-down glyphicom-align-center" aria-hidden="true">Dislike</span>
+    <span class="badge"><%= @lecture.get_downvotes.size %></span>
+  </button>
+<% end %>
+<br/><br/>
 <table>
   <thead>
   <tr>
     <th>Comments</th>
-<!--    <th>user</th>-->
+    <!--    <th>user</th>-->
   </tr>
 
   </thead>
@@ -22,20 +35,20 @@
   <tbody>
   <% @lecture.comments.each do |comment| %>
 
-  <tr>
-    <td><%= comment.body %></td>
-<!--    <td><%#= comment.user.email%></td>-->
-  </tr>
-    <% end %>
+    <tr>
+      <td><%= comment.body %></td>
+      <!--    <td><%#= comment.user.email%></td>-->
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
 
-<%= form_for([@lecture,@lecture.comments.build])  do |f| %>
-<div class="field">
-  <%= f.label :Write_comment %>
-  <%= f.text_area :body  %>
-    </div>
+<%= form_for([@lecture, @lecture.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :Write_comment %>
+    <%= f.text_area :body %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

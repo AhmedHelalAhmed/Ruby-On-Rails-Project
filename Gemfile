@@ -61,3 +61,5 @@ gem 'carrierwave', '~> 1.0'
 gem 'activeadmin', '~> 1.0.0.pre2'
 # for rich text
 gem 'ckeditor_rails'
+# for like and dislike
+gem 'acts_as_votable', '~> 0.11.1'

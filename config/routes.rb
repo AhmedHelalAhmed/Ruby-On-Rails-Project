@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root to: 'courses#index'
 
   resources :lectures do
+    member do
+      put "like"=>"lectures#upvote"
+      put "dislike"=>"lectures#downvote"
+    end
     resource :comments
   end
   resources :courses
