@@ -100,4 +100,8 @@ rails db:migrate
 ```
 rails generate model Lecture --skip-migration
 ```
+* add lectures controller
+```
+rails generate scaffold_controller lecture
+```
 
