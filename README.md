@@ -104,4 +104,14 @@ rails generate model Lecture --skip-migration
 ```
 rails generate scaffold_controller lecture
 ```
+* add comment model
+```
+rails g model Comment body:text lecture_id:integer
+
+```
+* add comment controller
+```
+rails g controller Comments
+
+```
 

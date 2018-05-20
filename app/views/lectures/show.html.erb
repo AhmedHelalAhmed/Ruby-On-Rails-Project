@@ -7,5 +7,41 @@
   <strong>attachment:</strong>
   <a href="<%= @lecture.attachment %>" > Download the attachment</a>
 </p>
+
+
+
+<table>
+  <thead>
+  <tr>
+    <th>Comments</th>
+<!--    <th>user</th>-->
+  </tr>
+
+  </thead>
+
+  <tbody>
+  <% @lecture.comments.each do |comment| %>
+
+  <tr>
+    <td><%= comment.body %></td>
+<!--    <td><%#= comment.user.email%></td>-->
+  </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= form_for([@lecture,@lecture.comments.build])  do |f| %>
+<div class="field">
+  <%= f.label :Write_comment %>
+  <%= f.text_area :body %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+
+  </div>
+
+<% end %>
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>

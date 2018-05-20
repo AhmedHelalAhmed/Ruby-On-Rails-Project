@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   #to make the start page is the courses
   root to: 'courses#index'
 
-  resources :lectures
+  resources :lectures do
+    resource :comments
+  end
   resources :courses
   # resources :courses do
   #   resources :lectures
